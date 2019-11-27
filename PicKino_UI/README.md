@@ -1,4 +1,4 @@
-# ed-pay
+# PicKino
 
 Install yarn 
 
