@@ -10,7 +10,7 @@ Clone to repo
 
 Go inside the project and run yarn install
 
-<code>cd Pickino</code>
+<code>cd PicKino/PicKino_UI/</code>
 <br>
 <code>yarn install</code>
 
