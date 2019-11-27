@@ -1,0 +1,39 @@
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { Institution } from "src/app/models/institution";
+import { moviesService } from "src/app/services/movies.service";
+import { ModalDirective } from "angular-bootstrap-md";
+import { Router } from "@angular/router";
+
+@Component({
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"],
+  providers: []
+})
+export class HomeComponent implements OnInit {
+  @ViewChild("LoginModal") LoginModal: ModalDirective;
+
+  movies: Institution[];
+
+  selectedMovie: Institution;
+
+  constructor(
+    private insService: moviesService,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    this.insService.getmovies().subscribe(res => {
+      this.movies = res.body;
+    });
+  }
+
+  showIns(movie: Institution) {
+    this.LoginModal.show();
+    this.selectedMovie = movie;
+  }
+
+  applyForm(institite: Institution) {
+    this.router.navigate(["/apply", { id: institite.id }]);
+  }
+}
