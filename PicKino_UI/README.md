@@ -6,7 +6,7 @@ Install yarn
 
 Clone to repo
 
-<code>git clone https://github.com/edpay/ed-pay.git</code>
+<code>git clone https://github.com/soumyag25/PicKino.git</code>
 
 Go inside the project and run yarn install
 
