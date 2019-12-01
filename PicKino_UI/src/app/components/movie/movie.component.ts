@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Institution } from "src/app/models/institution";
+import { Movie } from "src/app/models/movie";
 
 @Component({
   selector: "app-movie",
@@ -7,7 +7,7 @@ import { Institution } from "src/app/models/institution";
   styleUrls: ["./movie.component.scss"]
 })
 export class MovieComponent implements OnInit {
-  @Input() selMovie: Institution;
+  @Input() selMovie: Movie;
 
   constructor() {}
 

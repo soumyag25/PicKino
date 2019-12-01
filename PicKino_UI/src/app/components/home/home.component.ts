@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { Institution } from "src/app/models/institution";
+import { Movie } from "src/app/models/movie";
 import { moviesService } from "src/app/services/movies.service";
 import { ModalDirective } from "angular-bootstrap-md";
 import { Router } from "@angular/router";
@@ -13,27 +13,24 @@ import { Router } from "@angular/router";
 export class HomeComponent implements OnInit {
   @ViewChild("LoginModal") LoginModal: ModalDirective;
 
-  movies: Institution[];
+  movies: Movie[];
 
-  selectedMovie: Institution;
+  selectedMovie: Movie;
 
-  constructor(
-    private insService: moviesService,
-    private router: Router
-  ) {}
+  constructor(private insService: moviesService, private router: Router) {}
 
   ngOnInit() {
     this.insService.getmovies().subscribe(res => {
-      this.movies = res.body;
+      this.movies = res;
     });
   }
 
-  showIns(movie: Institution) {
+  showIns(movie: Movie) {
     this.LoginModal.show();
     this.selectedMovie = movie;
   }
 
-  applyForm(institite: Institution) {
-    this.router.navigate(["/apply", { id: institite.id }]);
+  applyForm(movie: Movie) {
+    this.router.navigate(["/apply", { id: movie.id }]);
   }
 }

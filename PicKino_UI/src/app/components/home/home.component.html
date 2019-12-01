@@ -6,9 +6,6 @@
       <h2 class="card-title h1-responsive pt-3 mb-3 font-bold">
         <strong>Select your movie!</strong>
       </h2>
-      <h4 class="card-title h4-responsive font-bold">
-        <strong>Some tagline</strong>
-      </h4>
       <!-- <form class="form-inline md-form form-sm cyan darken-1"> -->
       <!-- <app-searchbox></app-searchbox> -->
       <!-- </form> -->
@@ -34,18 +31,16 @@
             <div class="mask rgba-white-slight"></div>
           </a>
         </div>
-        <mdb-card-body cascade="true" class="text-center no-padding">
-          <a href="" class="text-muted">
-            <h5>{{ movie.type }}</h5>
-          </a>
-          <mdb-card-title>
-            <h4 class="card-title">
+        <mdb-card-body cascade="true" class="text-center no-padding" style="height:200px">
+          
+          <mdb-card-title >
+            <h4 class="card-title" style="height:60px">
               <strong>
                 <a href="">{{ movie.name }}</a>
               </strong>
             </h4>
           </mdb-card-title>
-          <mdb-card-text>{{ movie.genreLanguage }}</mdb-card-text>
+          <mdb-card-text style="height:40px">{{ movie.genreLanguage }}</mdb-card-text>
           <a
             mdbBtn
             type="button"
