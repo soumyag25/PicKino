@@ -1,0 +1,94 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan darken-1 fixed-top scrolling-navbar ie-nav" [containerInside]="false">
+    <mdb-navbar-brand>
+      <a class="logo navbar-brand" routerLink='/'><strong>PicKino</strong></a>
+    </mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a class="nav-link" routerLink='/'>Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item waves-light" routerLinkActive="active" mdbWavesEffect>
+          <a class="nav-link" routerLink='/about'>About <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item waves-light" routerLinkActive="active" mdbWavesEffect>
+          <a class="nav-link" routerLink='/movies'>Movies <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item waves-light">
+            <!-- <form class="form-inline waves-light" mdbWavesEffect> -->
+                <!-- <div class="md-form mt-0"> -->
+                    <app-searchbox></app-searchbox>
+                <!-- </div> -->
+            <!-- </form> -->
+      </li>
+      </ul>
+      <ul class="navbar-nav navbar-right">
+        <!--<a class="nav-link waves-light white-text " data-toggle="modal" data-target="#basicExample" (click)="frame.show()"
+          mdbWavesEffect>Login</a>-->
+      </ul>
+    </links>
+  </mdb-navbar>
+
+<!-- START Sign In Modal -->
+<div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <!--Content-->
+    <div class="modal-content form-elegant">
+      <!--Header-->
+      <div class="modal-header text-center">
+        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel">
+          <strong>Sign in</strong>
+        </h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mx-4">
+        <!--Body-->
+        <div class="md-form mb-5">
+          <input type="email" id="Form-email1" class="form-control" mdbInputDirective [formControl]="loginFormModalEmail">
+          <label data-error="wrong" data-success="right" for="Form-email1">Your email</label>
+        </div>
+
+        <div class="md-form pb-3">
+          <input type="password" id="Form-pass1" class="form-control" mdbInputDirective [formControl]="loginFormModalPassword">
+          <label data-error="wrong" data-success="right" for="Form-pass1">Your password</label>
+          <p class="font-small blue-text d-flex justify-content-end">Forgot
+            <a href="#" class="blue-text ml-1"> Password?</a>
+          </p>
+        </div>
+
+        <div class="text-center mb-3">
+          <button type="button" mdbBtn block="true" rounded="true" class="z-depth-1a waves-light cyan darken-1"
+            mdbWavesEffect>Sign in</button>
+        </div>
+        <!-- <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in
+          with:</p>
+
+        <div class="row my-3 d-flex justify-content-center">
+          <button type="button" mdbBtn color="white" rounded="true" class="mr-md-3 z-depth-1a waves-light"
+            mdbWavesEffect>
+            <i class="fa fa-facebook text-center"></i>
+          </button>
+          <button type="button" mdbBtn color="white" rounded="true" class="mr-md-3 z-depth-1a waves-light"
+            mdbWavesEffect>
+            <i class="fa fa-twitter"></i>
+          </button>
+          <button type="button" mdbBtn color="white" rounded="true" class="z-depth-1a waves-light"
+            mdbWavesEffect>
+            <i class="fa fa-google-plus"></i>
+          </button>
+        </div> -->
+      </div>
+      <!--Footer-->
+      <div class="modal-footer mx-5 pt-3 mb-1">
+        <p class="font-small grey-text d-flex justify-content-end">Not a member?
+          <a href="#" class="blue-text ml-1"> Sign Up</a>
+        </p>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- END Sign In Modal -->

@@ -1,0 +1,34 @@
+
+<h2>Select Seat for Movie Id  {{id}} </h2>
+
+<table>
+        <tr><td><label> </label></td><td><label style="margin: 20px;" *ngFor="let number of r">{{number}}</label></td></tr>
+        <tr *ngFor="let a of alphabets"><td><label >{{a}}</label></td><td><button type="button" class=" btn-elegant" [attr.id]="a + number" style="width:20px; height: 20px; margin:14px;" (click)="changeLabelName(a, number) ; count = count + 1" *ngFor="let number of r"></button></td></tr>
+        
+</table>
+    
+<ng-container>
+        <p>
+            <label id="lblName">The Selected Seats Are :
+            {{labelValue}}
+            </label>
+        
+        </p>
+
+        <p>
+           <label id="lb2Name">Total Seats Booked : 
+           {{count}}
+           </label>
+        </p>     
+    </ng-container>
+
+    <button
+          type="button"
+          mdbBtn
+          color="primary"
+          class="relative waves-light"
+          mdbWavesEffect
+          (click)="applyFormSeat()"
+        >
+          Confirm Booking
+        </button>

@@ -1,0 +1,26 @@
+<p>{{ selMovie.name }}</p>
+<p>{{ selMovie.rating }}</p>
+<p>{{ selMovie.description }}</p>
+<p>{{ selMovie.cast }}</p>
+<p>{{ selMovie.emailid }}</p>
+<p>{{ selMovie.releaseDate }}</p>
+<p>{{ selMovie.imageLink }}</p>
+<p>{{ selMovie.type }}</p>
+<p>{{ selMovie.genreLanguage }}</p>
+
+<mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+  <mdb-carousel-item>
+    <img class="d-block w-100" [src]="selMovie.imageLink1" alt="First slide" />
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img class="d-block w-100" [src]="selMovie.imageLink2" alt="Second slide" />
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img class="d-block w-100" [src]="selMovie.imageLink3" alt="Third slide" />
+  </mdb-carousel-item>
+</mdb-carousel>
+
+<!--<div class="jumbotron slide">
+  <p class="lead">genreLanguage Hosted</p>
+  <p>{{ selMovie.genreLanguage }}</p>
+</div>-->

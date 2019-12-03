@@ -1,0 +1,117 @@
+<!-- <div class="page" *ngFor="let page of pages"></div> -->
+
+<div class="card card-image cyan darken-1">
+  <div class="text-white text-center py-3 px-2 my-4">
+    <div style="align-items: center;">
+      <h2 class="card-title h1-responsive pt-3 mb-3 font-bold">
+        <strong>Select your movie!</strong>
+      </h2>
+      <!-- <form class="form-inline md-form form-sm cyan darken-1"> -->
+      <!-- <app-searchbox></app-searchbox> -->
+      <!-- </form> -->
+    </div>
+  </div>
+</div>
+
+<div class="container pt-xl-5">
+  <div class="row">
+    <div
+      class="col-sm-4 col-md-4 col-lg-3 mb-lg-4"
+      *ngFor="let movie of movies"
+    >
+      <mdb-card cascade="true" wider="true">
+        <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+          <img
+            class="img-fluid"
+            [src]="movie.imageLink1"
+            alt="{{ movie.name }}"
+            style="width: 100%; height: 150px"
+          />
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <mdb-card-body cascade="true" class="text-center no-padding" style="height:200px">
+          
+          <mdb-card-title >
+            <h4 class="card-title" style="height:60px">
+              <strong>
+                <a href="">{{ movie.name }}</a>
+              </strong>
+            </h4>
+          </mdb-card-title>
+          <mdb-card-text style="height:40px">{{ movie.genreLanguage }}</mdb-card-text>
+          <a
+            mdbBtn
+            type="button"
+            (click)="showIns(movie)"
+            color="primary"
+            outline="true"
+            block="true"
+            mdbWavesEffect
+          >
+            MORE INFO <i class="fas fa-info-circle"></i>
+          </a>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+</div>
+
+<div
+  mdbModal
+  #LoginModal="mdbModal"
+  class="modal fade right"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myBasicModalLabel"
+  aria-hidden="true"
+  style="overflow-y: auto"
+>
+  <div
+    class="modal-dialog  modal-dialog-centered modal-fluid modal-full-height modal-right"
+    role="document"
+  >
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close pull-right"
+          aria-label="Close"
+          (click)="LoginModal.hide()"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 *ngIf="selectedMovie" class="modal-title w-100" id="myModalLabel">
+          {{ selectedMovie.name }}
+        </h4>
+      </div>
+      <div *ngIf="selectedMovie" class="modal-body">
+        <app-movie [selMovie]="selectedMovie"></app-movie>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button
+          type="button"
+          mdbBtn
+          color="secondary"
+          class="waves-light"
+          aria-label="Close"
+          (click)="LoginModal.hide()"
+          mdbWavesEffect
+        >
+          Close
+        </button>
+        <button
+          type="button"
+          mdbBtn
+          color="primary"
+          class="relative waves-light"
+          mdbWavesEffect
+          (click)="applyForm(selectedMovie)"
+        >
+          Book
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
