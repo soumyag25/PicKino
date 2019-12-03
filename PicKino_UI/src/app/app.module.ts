@@ -11,10 +11,14 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { HomeComponent } from "./components/home/home.component";
 import { AboutComponent } from "./components/about/about.component";
 import { SearchboxComponent } from "./components/searchbox/searchbox.component";
-import { moviesComponent } from "./components/movies/movies.component";
+import { MoviesComponent } from "./components/movies/movies.component";
 import { moviesService } from "./services/movies.service";
 import { MovieComponent } from "./components/movie/movie.component";
 import { ApplyFormComponent } from "./components/apply-form/apply-form.component";
+import { seatsService } from "./services/seats.service";
+import { SeatsComponent } from './components/seats/seats.component';
+import { payService } from "./services/pay.service";
+import { PayComponent } from './components/pay/pay.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +28,11 @@ import { ApplyFormComponent } from "./components/apply-form/apply-form.component
     HomeComponent,
     AboutComponent,
     SearchboxComponent,
-    moviesComponent,
+    MoviesComponent,
     MovieComponent,
-    ApplyFormComponent
+    ApplyFormComponent,
+    SeatsComponent,
+    PayComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,7 @@ import { ApplyFormComponent } from "./components/apply-form/apply-form.component
     HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [moviesService],
+  providers: [moviesService, seatsService, payService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

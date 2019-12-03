@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { Movie } from "src/app/models/movie";
+import { Seats } from "src/app/models/seats";
 import { moviesService } from "src/app/services/movies.service";
+import { seatsService } from "src/app/services/seats.service";
 import { ModalDirective } from "angular-bootstrap-md";
 import { Router } from "@angular/router";
 
@@ -14,6 +16,7 @@ export class HomeComponent implements OnInit {
   @ViewChild("LoginModal") LoginModal: ModalDirective;
 
   movies: Movie[];
+  seats: Seats[];
 
   selectedMovie: Movie;
 
@@ -31,6 +34,7 @@ export class HomeComponent implements OnInit {
   }
 
   applyForm(movie: Movie) {
-    this.router.navigate(["/apply", { id: movie.id }]);
+    var movieId = this.selectedMovie.id;
+    this.router.navigate(['seats', movieId]);
   }
 }
