@@ -1,1 +1,21 @@
-<h1> Thank you for your booking! Enjoy your movie</h1>
+<div class="row" style="height:500px; width: 100%">
+  <div class="col-25">
+    <div class="container">
+      <form action="/pay">
+        <div class="row">
+          <div class="col-50">
+            <h2>You have booked tickets for the Movie {{ movie }}.</h2>
+            <br />
+            <h2>Seat Numbers are {{ selectedSeats }}.</h2>
+            <br />
+            <h2>Your Booking Id {{ bookingId }}.</h2>
+            <br />
+            <h1>Thank you for booking. Enjoy your movie!</h1>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-50"></div>
+</div>

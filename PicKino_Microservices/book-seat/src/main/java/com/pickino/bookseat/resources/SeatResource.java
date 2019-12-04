@@ -9,8 +9,8 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.ResourceUtils;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -44,8 +44,8 @@ public class SeatResource {
 	      
 	    }
 	
-	@RequestMapping("/reserve")
-	 public boolean getReserveSeats(@RequestParam("selectedSeats") String selectedSeats) {
+	@RequestMapping("/reserve/{selectedSeats}")
+	 public boolean getReserveSeats(@PathVariable("selectedSeats") String selectedSeats) {
 		  System.out.println("entering book seats");
 		  boolean output = false;
 		  try{

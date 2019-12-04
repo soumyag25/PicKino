@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
   }
 
   applyForm(movie: Movie) {
-    var movieId = this.selectedMovie.id;
-    this.router.navigate(['seats', movieId]);
+    var movieName = this.selectedMovie.name;
+    this.router.navigate(["/seats", movieName]);
   }
 }

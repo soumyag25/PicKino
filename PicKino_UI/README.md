@@ -1,6 +1,6 @@
 # PicKino
 
-Install yarn 
+Install yarn
 
 <code>npm install -g yarn</code>
 
@@ -16,10 +16,9 @@ Go inside the project and run yarn install
 
 use <code>ng serve -o</code> to run the project
 
-If you want to add any new packages, use 
+If you want to add any new packages, use
 <code>yarn add <package_name></code>
 
-To add any new component, go to ed-pay folder (root folder), 
+To add any new component, go to pickino folder (root folder),
 <code>ng generate component components/<component_name> </code>
 [All components should go inside components folder]
-

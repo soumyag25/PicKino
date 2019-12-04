@@ -14,11 +14,11 @@ import { SearchboxComponent } from "./components/searchbox/searchbox.component";
 import { MoviesComponent } from "./components/movies/movies.component";
 import { moviesService } from "./services/movies.service";
 import { MovieComponent } from "./components/movie/movie.component";
-import { ApplyFormComponent } from "./components/apply-form/apply-form.component";
 import { seatsService } from "./services/seats.service";
-import { SeatsComponent } from './components/seats/seats.component';
+import { SeatsComponent } from "./components/seats/seats.component";
 import { payService } from "./services/pay.service";
-import { PayComponent } from './components/pay/pay.component';
+import { PayComponent } from "./components/pay/pay.component";
+import { ConfirmComponent } from "./components/confirm/confirm.component";
 
 @NgModule({
   declarations: [
@@ -30,9 +30,9 @@ import { PayComponent } from './components/pay/pay.component';
     SearchboxComponent,
     MoviesComponent,
     MovieComponent,
-    ApplyFormComponent,
     SeatsComponent,
-    PayComponent
+    PayComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,

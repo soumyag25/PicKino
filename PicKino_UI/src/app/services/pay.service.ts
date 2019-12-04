@@ -9,22 +9,21 @@ export class payService {
   payURL = "http://localhost:7010/controller/pay";
   constructor(private http: HttpClient) {}
 
-//   @Injectable()
-// export class confirmService {
-//   confirmURL = "http://localhost:7010/controller/pay/confirm";
-//   constructor(private http: HttpClient) {}
-
-
   httpOptions = {
     headers: new HttpHeaders({
-      
       "Content-Type": "application/json"
     })
   };
 
-  getseats(): Observable<Pay[]> {
+  public pay(
+    movie: string,
+    selectedSeats: string,
+    totalCost: string
+  ): Observable<string> {
     return this.http
-      .get<Pay[]>(this.payURL)
+      .get(this.payURL + "/" + movie + "/" + selectedSeats + "/" + totalCost, {
+        responseType: "text"
+      })
       .pipe(retry(1), catchError(this.handleError));
   }
 
