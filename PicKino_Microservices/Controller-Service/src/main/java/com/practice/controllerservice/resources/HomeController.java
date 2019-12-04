@@ -23,15 +23,45 @@ public class HomeController {
 		
 		String output=null;
 		try {
-			System.out.println("called controller getMovieInfo");
+			System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO --------- called controller getMovieInfo");
 			output = restTemplate.getForObject("http://Info-Service/movies", String.class);
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 		}
 		
+		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + output);
+		return output;
+	}
+
+//	@Autowired
+//	private RestTemplate restTemplate1;
+	@RequestMapping("/seats/booked")	
+	public String getBookedSeatsInfo(){
+		
+		String output=null;
+		try {
+			System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO --------- called controller getSeatInfo");
+			output = restTemplate.getForObject("http://book-seat-service/seats/booked", String.class);
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+		}
+				
 		return output;
 	}
 	
+	@RequestMapping("/pay")	
+	public String getPayInfo(){
+		
+		String output=null;
+		try {
+			System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO --------- called controller getSPayInfo");
+			output = restTemplate.getForObject("http://payments-service/pay", String.class);
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+		}
+				
+		return output;
+	}
 	
 	
 }
